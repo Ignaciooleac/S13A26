@@ -1,5 +1,21 @@
 <% @todos.each do |todo| %>
+
+  <div class="card">
+  <div class="card-body">
+   
+<!-- https://getbootstrap.com/docs/4.0/components -->
+
   <h1> <%= link_to todo.description, todo %> </h1>
-  <p> <%= link_to "Borrar", todo, method: :delete %> </p>
- <p> <%= link_to "Complete", todo, method: :complete %> </p>
+  <div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-warning"><%= link_to "Editar", edit_path(todo) %></button>
+  <button type="button" class="btn btn-danger"><%= link_to "Borrar", todo, method: :delete %></button>
+</div>
+<div>
+<input type="checkbox" >
+<label>Completed</label>
+</div>
+  <p> <%= todo.completed %> </p>
+  </div>
+  </div>
   <% end %>
+ 
