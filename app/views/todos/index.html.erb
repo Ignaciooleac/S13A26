@@ -1,4 +1,3 @@
 <% @todos.each do |todo| %>
-  <h1> <%= todo.description %> </h1>
-  <p> <% todo.completed %> <p>
+  <h1> <%= link_to todo.description, todo %> </h1>
   <% end %>

@@ -8,13 +8,19 @@ class TodosController < ApplicationController
     end
 
     def create
-        @post = Todo.new(params[:post])
-        @post.save
+        @todo = Todo.new(params[:todo])
+        @todo.save
         redirect_to todos_path
     end
 
-    private
-    def post_params
-        params.require(:post).permit(:description, :completed)
+    def show
+        @todo = Todo.find(params[:id])
     end
+
+    private
+    def todo_params
+        params.require(:todo).permit(:description)
+    end
+
+    
 end
