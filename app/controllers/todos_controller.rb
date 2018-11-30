@@ -40,7 +40,7 @@ class TodosController < ApplicationController
     end
 
     def list
-        @todo
+        @todo = Todo.all
     end
 
     private

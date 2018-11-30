@@ -1,21 +1,18 @@
 <% @todos.each do |todo| %>
-
+  <!-- https://getbootstrap.com/docs/4.0/components -->
   <div class="card">
-  <div class="card-body">
-   
-<!-- https://getbootstrap.com/docs/4.0/components -->
-
-  <h1> <%= link_to todo.description, todo %> </h1>
-  <div class="btn-group" role="group" aria-label="Basic example">
-  <button type="button" class="btn btn-warning"><%= link_to "Editar", edit_path(todo) %></button>
-  <button type="button" class="btn btn-danger"><%= link_to "Borrar", todo, method: :delete %></button>
-</div>
-<div>
-<input type="checkbox" >
-<label>Completed</label>
-</div>
-  <p> <%= todo.completed %> </p>
+    <div class="card-body">   
+      <h1> <%= link_to todo.description, todo %> </h1>
+    <div class="btn-group" role="group" aria-label="Basic example">
+    <%= link_to "Editar", edit_path(todo), class:"btn btn-warning" %>
+    <%= link_to "Borrar", todo, method: :delete, class:"btn btn-danger" %>
   </div>
+  <div>
+    <input type="checkbox" >
+    <label>Completed</label>
   </div>
-  <% end %>
+    <p> <%= todo.completed %> </p>
+  </div>
+</div>
+<% end %>
  

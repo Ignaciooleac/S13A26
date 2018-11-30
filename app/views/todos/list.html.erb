@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col", style="top:60px">
+    <div class="card card-body bg-light">
+     <% @todo.each do |todo| %>
+        <% if !todo.completed? %>
+            <h4> <%= todo.description %> </h4>
+            <p> <%= todo.completed %> </p>
+        <% end %>
+      <% end %>
+      </div>
+    </div>
+    <div class="col", style="top:60px">
+    <div class="card card-body bg-light">
+    <% @todo.each do |todo| %>
+        <% if todo.completed? %>
+            <h4> <%= todo.description %> </h4>
+            <p> <%= todo.completed %> </p>
+        <% end %>
+      <% end %>
+    </div>
+   
+  </div>
+</div>
