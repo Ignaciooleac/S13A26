@@ -1,2 +1,23 @@
-<h1> <%= todo.description %> </h1>
-<p> <% time_ago_in_words @todo.created_at %> </p>
+
+<div class="card">
+<div class="card-body">   
+<div class="card text-center">
+<div class="card-header">
+  <ul class="nav nav-pills card-header-pills">
+    <li class="nav-item">
+    <%= link_to "Edit", edit_path(@todo), class:"btn btn-warning" %>
+    </li>
+    <li class="nav-item">
+    <%= link_to "Delete", @todo, method: :delete, class:"btn btn-danger" %>
+    </li>
+  </ul>
+</div>
+<div class="card-body">
+  <h5 class="card-title">To Do:</h5>
+  <p class="card-text"><h1><%= @todo.description %> </h1></p>
+  <%= link_to "Complete", todos_complete_path(id:@todo), class:"btn btn-success" %>
+</div>
+</div> 
+  </div>
+</div>
+</div>

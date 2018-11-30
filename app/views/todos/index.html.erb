@@ -2,17 +2,33 @@
   <!-- https://getbootstrap.com/docs/4.0/components -->
   <div class="card">
     <div class="card-body">   
-      <h1> <%= link_to todo.description, todo %> </h1>
-    <div class="btn-group" role="group" aria-label="Basic example">
-    <%= link_to "Editar", edit_path(todo), class:"btn btn-warning" %>
-    <%= link_to "Borrar", todo, method: :delete, class:"btn btn-danger" %>
+    <div class="card text-center">
+    <div class="card-header">
+      <ul class="nav nav-pills card-header-pills">
+        <li class="nav-item">
+        <%= link_to "Show",todo_path(todo),class:"btn btn-primary" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to "Edit", edit_path(todo), class:"btn btn-warning" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to "Delete", todo, method: :delete, class:"btn btn-danger" %>
+        </li>
+      </ul>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">To Do:</h5>
+      <p class="card-text"><h1><%= todo.description %> </h1></p>
+      <%= link_to "Complete", todos_complete_path(id:todo), class:"btn btn-success" %>
+    </div>
+  </div> 
+
+        
+        
+        
+    
+      </div>
+    </div>
   </div>
-  <div>
-    <input type="checkbox" >
-    <label>Completed</label>
-  </div>
-    <p> <%= todo.completed %> </p>
-  </div>
-</div>
 <% end %>
  
