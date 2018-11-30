@@ -15,15 +15,15 @@ y eliminar ToDos. Cada ToDo debe poseer además la opción de ser marcado como
 completado.
 
 # CRUDS
--Index
--New
--Create
--Show
--Edit
--Update
--Destroy
--Complete
+- Index
+- New
+- Create
+- Show
+- Edit
+- Update
+- Destroy
+- Complete
 
-#Refactoring
+# Refactoring
 Refactorizar los formularios utilizados en las vistas de creación y edición de un
 ToDo.
